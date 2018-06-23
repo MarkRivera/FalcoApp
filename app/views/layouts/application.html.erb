@@ -9,9 +9,13 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= yield :scripts %>
   </head>
 
   <body>
     <%= yield %>
+    <% content_for :scripts do %>
+      <%= javascript_include_tag "foundation.min" %>
+    <% end %>
   </body>
 </html>
